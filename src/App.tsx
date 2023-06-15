@@ -1,6 +1,7 @@
 import logo from '/logo.svg'
 import classes from './app.module.scss'
 import { CartWidget } from './components/CartWidget'
+import { Footer } from './components/Footer'
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
       <main>
         main content here...
       </main>
-      <footer>Footer here...</footer>
+      <Footer />
     </>
   )
 }

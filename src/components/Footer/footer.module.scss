@@ -1,0 +1,31 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  color: deeppink;
+
+  ul {
+    list-style-type: none;
+    text-align: center;
+    line-height: 150%;
+    margin: 0;
+    padding: 0;
+  }
+  .footerLinks {
+    a {
+      color: deeppink;
+      font-size: .8em;
+    }
+  }
+
+  .footerCopyrights {
+    color: var(--high-contrast);
+    font-size: 0.6em;
+  }
+
+  .version {
+    font-size: 0.6em;
+    line-height: 100%;
+  }
+}
