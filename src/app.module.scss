@@ -1,0 +1,46 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: #213547;
+
+  .logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+
+    &:hover {
+      filter: drop-shadow(0 0 2em #646cffaa);
+    }
+  }
+
+  button {
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  .shoppingCart {
+    height: 3em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+    border: 1px solid #213547;
+
+
+    &:hover {
+      border: 1px solid white;
+    }
+  }
+}
+
