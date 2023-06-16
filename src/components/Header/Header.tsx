@@ -5,6 +5,7 @@ import logo from '/logo.svg'
 import { CartWidget } from '../CartWidget'
 import { CartProps } from '../Products/Products.tsx'
 import classes from './header.module.scss'
+import { Link } from 'react-router-dom'
 
 export const Header: FunctionComponent = () => {
   const [cart,] = useLocalStorageState<CartProps>('cart', {})
@@ -14,9 +15,9 @@ export const Header: FunctionComponent = () => {
   return (
     <header className={classes.header}>
       <div>
-        <a href="/#">
+        <Link to="/">
           <img src={logo} className={classes.logo} alt="Shopping CartWidget Application" />
-        </a>
+        </Link>
       </div>
       <div>
         <CartWidget productsCount={productsCount} />

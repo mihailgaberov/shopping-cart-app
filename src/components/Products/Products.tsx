@@ -1,9 +1,10 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useEffect, useState } from 'react'
 import useLocalStorageState from 'use-local-storage-state'
 
 import { CurrencyFormatter } from '../CurrencyFormatter'
 import classes from './products.module.scss'
 
+const API_URL = 'https://dummyjson.com/products'
 
 export type Product = {
   id: number
@@ -13,16 +14,34 @@ export type Product = {
   image: string
 }
 
-interface Props {
-  products: Product[]
-}
-
 export interface CartProps {
   [productId: string]: Product
 }
 
-export const Products: FunctionComponent<Props> = ({ products }) => {
+export const Products: FunctionComponent = () => {
+  const [products, setProducts] = useState<Product[]>([])
+  const [error, setError] = useState(false)
   const [cart, setCart] = useLocalStorageState<CartProps>('cart', {})
+
+
+  useEffect(() => {
+    fetchData(API_URL)
+  }, [])
+
+
+  async function fetchData(url: string) {
+    try {
+      const response = await fetch(url)
+      if (response.ok) {
+        const data = await response.json();
+        setProducts(data.products)
+      } else {
+        setError(true)
+      }
+    } catch (error) {
+      setError(true)
+    }
+  }
 
   const addToCart = (product: Product):void => {
     setCart((prevCart) => ({
@@ -32,6 +51,10 @@ export const Products: FunctionComponent<Props> = ({ products }) => {
   }
 
   const isInCart = (productId: number):boolean => Object.keys(cart || {}).includes(productId.toString())
+
+  if (error) {
+    return <h3 className={classes.error}>An error occurred when fetching data. Please check the API and try again.</h3>
+  }
 
   return (
     <section className={classes.productPage}>
