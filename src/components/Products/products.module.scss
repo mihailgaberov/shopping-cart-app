@@ -1,0 +1,32 @@
+.productPage {
+  padding: 1rem;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .product {
+      flex-basis: 33.33%;
+      margin-bottom: 2rem;
+      text-align: center;
+
+      img {
+        height: 6rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .product {
+        flex-basis: 50%;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .product {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+
