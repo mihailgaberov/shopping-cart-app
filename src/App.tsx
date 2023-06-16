@@ -42,7 +42,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Products products={products} />} />
-          <Route path="/cart" element={<Cart products={products} />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
 
       </main>

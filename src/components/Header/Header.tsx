@@ -1,9 +1,16 @@
 import { FunctionComponent } from 'react';
+import useLocalStorageState from 'use-local-storage-state'
+
 import logo from '/logo.svg'
 import { CartWidget } from '../CartWidget'
+import { CartProps } from '../Products/Products.tsx'
 import classes from './header.module.scss'
 
 export const Header: FunctionComponent = () => {
+  const [cart,] = useLocalStorageState<CartProps>('cart', {})
+
+  const productsCount: number = Object.keys(cart || {}).length
+
   return (
     <header className={classes.header}>
       <div>
@@ -12,7 +19,7 @@ export const Header: FunctionComponent = () => {
         </a>
       </div>
       <div>
-        <CartWidget productsCount={2} />
+        <CartWidget productsCount={productsCount} />
       </div>
     </header>
   )
