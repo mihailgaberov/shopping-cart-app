@@ -7,19 +7,23 @@
 
     .product {
       display: flex;
+      border-top: 1px dotted;
+      border-left: 1px dotted;
+      border-right: 1px dotted;
+      padding: .3rem .5rem;
+      align-items: center;
 
       h3 {
         color: #007185;
         font-weight: 700;
         line-height: 20px;
-      }
-
-      p {
-        color: #0F1111;
+        margin: .3rem;
+        flex: 1;
       }
 
       img {
         height: 3rem;
+        margin: .875rem;
       }
     }
 

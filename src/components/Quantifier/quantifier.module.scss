@@ -1,0 +1,49 @@
+.quantifier {
+  input {
+    order: 1;
+    border: 1px solid #eeeeee;
+    box-sizing: border-box;
+    margin: 0;
+    outline: none;
+    padding: 10px;
+    position: relative;
+    height: 38px;
+    left: -6px;
+    text-align: center;
+    width: 38px;
+    display: inline-block;
+    font-size: 13px;
+    resize: vertical;
+  }
+
+  input[type="button"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  input[type='button'] {
+    background-color: #eeeeee;
+    border: none;
+    width: 38px;
+    transition: all 300ms ease;
+    font-weight: bold;
+    font-size: 1.2em;
+    height: 38px;
+    padding: 0;
+    position: relative;
+
+    &:hover {
+      background-color: #D5D9D9;
+    }
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+  }
+}
