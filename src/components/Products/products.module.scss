@@ -11,8 +11,34 @@
       margin-bottom: 2rem;
       text-align: center;
 
+      h3 {
+        color: #007185;
+        font-weight: 700;
+        line-height: 20px;
+      }
+
+      p {
+        color: #0F1111;
+      }
+
       img {
         height: 6rem;
+      }
+
+      button {
+        background-color: #fbd815;
+        width: 13rem;
+        padding: .5rem;
+        font-size: 1.1em;
+        border-radius: 25px;
+        border-color: #D5D9D9;
+        border-style: solid;
+        border-width: 1px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #eecf1d;
+        }
       }
     }
 
