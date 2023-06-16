@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import classes from "./footer.module.scss"
 import packageJson from '../../../package.json'
 
-export const Footer: FunctionComponent = (): React.ReactElement => {
+export const Footer: FunctionComponent = () => {
   const currentYear = new Date().getFullYear();
 
   return (

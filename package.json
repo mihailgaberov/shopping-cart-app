@@ -30,6 +30,7 @@
     "jsdom": "^22.1.0",
     "sass": "^1.63.4",
     "typescript": "^5.0.2",
+    "use-local-storage-state": "^18.3.3",
     "vite": "^4.3.9",
     "vitest": "^0.32.0"
   }

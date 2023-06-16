@@ -8,6 +8,14 @@ interface Props {
 }
 
 export const Cart: FunctionComponent<Props> = ({ products }) => {
+  // const [cartProducts, setCartProducts] = useState<Product[]>([])
+  //
+  //
+  //
+  // const handleRemoveProduct = (productId: number) => {
+  //
+  // }
+
   return (
     <section className={classes.cart}>
       <h1>Cart</h1>
@@ -17,7 +25,7 @@ export const Cart: FunctionComponent<Props> = ({ products }) => {
           <div className={classes.product} key={product.id}>
             <img src={product.thumbnail} alt={product.title} />
             <h3>{product.title}</h3>
-            <Quantifier removeItemCallback={() => console.log('>>> remove item with id: ', product.id)} itemId={product.id} />
+            <Quantifier removeProductCallback={() => console.log('>>> remove item with id: ', product.id)} productId={product.id} />
           </div>
         ))}
       </div>

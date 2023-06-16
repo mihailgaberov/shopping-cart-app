@@ -34,10 +34,10 @@
         border-color: #D5D9D9;
         border-style: solid;
         border-width: 1px;
-        cursor: pointer;
 
-        &:hover {
+        &:hover:not([disabled]) {
           background-color: #eecf1d;
+          cursor: pointer;
         }
       }
     }
