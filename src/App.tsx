@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Products } from './components/Products'
+import { Cart } from './components/Cart'
 import classes from './app.module.scss'
 
-
 const API_URL = 'https://dummyjson.com/products'
-
 
 function App() {
   const [products, setProducts] = useState([])
@@ -37,13 +37,17 @@ function App() {
   }
 
   return (
-    <>
+    <BrowserRouter>
       <Header />
       <main>
-        <Products data={products} />
+        <Routes>
+          <Route path="/" element={<Products products={products} />} />
+          <Route path="/cart" element={<Cart products={products} />} />
+        </Routes>
+
       </main>
       <Footer />
-    </>
+    </BrowserRouter>
   )
 }
 

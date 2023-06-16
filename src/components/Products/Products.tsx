@@ -2,7 +2,7 @@ import { FunctionComponent } from 'react'
 import classes from './products.module.scss'
 import { CurrencyFormatter } from '../CurrencyFormatter'
 
-type Product = {
+export type Product = {
   id: number
   title: string
   price: number
@@ -11,23 +11,23 @@ type Product = {
 }
 
 interface Props {
-  data: Product[]
+  products: Product[]
 }
 
 
-export const Products: FunctionComponent<Props> = ({ data }) => (
-  <div className={classes.productPage}>
+export const Products: FunctionComponent<Props> = ({ products }) => (
+  <section className={classes.productPage}>
     <h1>Products</h1>
 
     <div className={classes.container}>
-      {data.map(product => (
+      {products.map(product => (
         <div className={classes.product} key={product.id}>
           <img src={product.thumbnail} alt={product.title} />
           <h3>{product.title}</h3>
           <p>Price: <CurrencyFormatter amount={product.price} /></p>
-          <button>Add to Cart</button>
+          <button onClick={() => console.log('>>> add to cart')}>Add to Cart</button>
         </div>
       ))}
     </div>
-  </div>
+  </section>
 )

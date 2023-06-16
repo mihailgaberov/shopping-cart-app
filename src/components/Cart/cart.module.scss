@@ -1,0 +1,35 @@
+.cart {
+  padding: 1rem;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+
+    .product {
+      display: flex;
+
+      h3 {
+        color: #007185;
+        font-weight: 700;
+        line-height: 20px;
+      }
+
+      p {
+        color: #0F1111;
+      }
+
+      img {
+        height: 3rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+
+    }
+
+    @media (max-width: 400px) {
+
+    }
+  }
+}
+
