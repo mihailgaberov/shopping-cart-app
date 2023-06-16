@@ -1,11 +1,11 @@
 import { FunctionComponent } from 'react';
+import { Link } from 'react-router-dom'
 import useLocalStorageState from 'use-local-storage-state'
 
 import logo from '/logo.svg'
 import { CartWidget } from '../CartWidget'
 import { CartProps } from '../Products/Products.tsx'
 import classes from './header.module.scss'
-import { Link } from 'react-router-dom'
 
 export const Header: FunctionComponent = () => {
   const [cart,] = useLocalStorageState<CartProps>('cart', {})
