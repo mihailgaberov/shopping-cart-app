@@ -1,31 +1,32 @@
 import { FunctionComponent } from 'react'
-import { Product } from '../Products/Products.tsx'
-import classes from './cart.module.scss'
+import useLocalStorageState from 'use-local-storage-state'
+
 import { Quantifier } from '../Quantifier'
+import { CartProps } from '../Products/Products.tsx'
+import classes from './cart.module.scss'
 
-interface Props {
-  products: Product[]
-}
 
-export const Cart: FunctionComponent<Props> = ({ products }) => {
-  // const [cartProducts, setCartProducts] = useState<Product[]>([])
-  //
-  //
-  //
-  // const handleRemoveProduct = (productId: number) => {
-  //
-  // }
+export const Cart: FunctionComponent = () => {
+  const [cart, setCart] = useLocalStorageState<CartProps>('cart', {})
+
+  const handleRemoveProduct = (productId: number):void => {
+    setCart((prevCart) => {
+      const updatedCart = { ...prevCart }
+      delete updatedCart[productId]
+      return updatedCart
+    })
+  }
 
   return (
     <section className={classes.cart}>
       <h1>Cart</h1>
 
       <div className={classes.container}>
-        {products.map(product => (
+        {Object.values(cart || {}).map(product => (
           <div className={classes.product} key={product.id}>
             <img src={product.thumbnail} alt={product.title} />
             <h3>{product.title}</h3>
-            <Quantifier removeProductCallback={() => console.log('>>> remove item with id: ', product.id)} productId={product.id} />
+            <Quantifier removeProductCallback={() => handleRemoveProduct(product.id)} productId={product.id} />
           </div>
         ))}
       </div>

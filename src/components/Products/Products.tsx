@@ -1,11 +1,8 @@
 import { FunctionComponent } from 'react'
 import useLocalStorageState from 'use-local-storage-state'
 
-
 import { CurrencyFormatter } from '../CurrencyFormatter'
-
 import classes from './products.module.scss'
-import { Cart } from '../Cart'
 
 
 export type Product = {
@@ -20,17 +17,14 @@ interface Props {
   products: Product[]
 }
 
-interface Cart {
+export interface CartProps {
   [productId: string]: Product
 }
 
 export const Products: FunctionComponent<Props> = ({ products }) => {
-  const [cart, setCart] = useLocalStorageState<Cart>('cart', {})
-
+  const [cart, setCart] = useLocalStorageState<CartProps>('cart', {})
 
   const addToCart = (product: Product):void => {
-    console.log('>>> add to cart', product)
-
     setCart((prevCart) => ({
       ...prevCart,
       [product.id]: product,

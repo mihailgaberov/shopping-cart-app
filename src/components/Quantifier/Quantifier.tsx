@@ -3,7 +3,7 @@ import { FunctionComponent, useState } from 'react'
 import classes from './quantifier.module.scss'
 
 interface Props {
-  removeProductCallback: (itemId: number) => void
+  removeProductCallback: (productId: number) => void
   productId: number
 }
 
@@ -11,10 +11,13 @@ export const Quantifier: FunctionComponent<Props> = ({ removeProductCallback, pr
   const [value, setValue] = useState<number>(1)
 
   const reduce = ():void => {
-    setValue(prevState => prevState - 1)
-    if (value === 0) {
-      removeProductCallback(productId)
-    }
+    setValue(prevState => {
+      const updatedValue = prevState - 1
+      if (updatedValue === 0) {
+        removeProductCallback(productId)
+      }
+      return updatedValue
+    })
   }
 
   const increase = ():void => {
