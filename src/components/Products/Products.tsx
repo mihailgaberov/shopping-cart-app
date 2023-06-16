@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react'
 import classes from './products.module.scss'
+import { CurrencyFormatter } from '../CurrencyFormatter'
 
 type Product = {
   id: number
@@ -23,7 +24,7 @@ export const Products: FunctionComponent<Props> = ({ data }) => (
         <div className={classes.product} key={product.id}>
           <img src={product.thumbnail} alt={product.title} />
           <h3>{product.title}</h3>
-          <p>Price: {product.price}</p>
+          <p>Price: <CurrencyFormatter amount={product.price} /></p>
           <button>Add to Cart</button>
         </div>
       ))}
