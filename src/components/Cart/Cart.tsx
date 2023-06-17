@@ -3,9 +3,9 @@ import useLocalStorageState from 'use-local-storage-state'
 
 import { Quantifier } from '../Quantifier'
 import { CartProps } from '../Products/Products.tsx'
-import classes from './cart.module.scss'
 import { TotalPrice } from '../TotalPrice'
 import { Operation } from '../Quantifier/Quantifier.tsx'
+import classes from './cart.module.scss'
 
 
 export const Cart: FunctionComponent = () => {
