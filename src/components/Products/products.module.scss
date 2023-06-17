@@ -8,13 +8,14 @@
 
     .product {
       flex-basis: 33.33%;
-      margin-bottom: 2rem;
+      margin-bottom: 5rem;
       text-align: center;
 
       h3 {
         color: #007185;
         font-weight: 700;
         line-height: 20px;
+        margin: 0;
       }
 
       img {
@@ -34,6 +35,11 @@
         &:hover:not([disabled]) {
           background-color: #eecf1d;
           cursor: pointer;
+        }
+
+        &:disabled {
+          opacity: .5;
+          background-color: lightgray;
         }
       }
     }
