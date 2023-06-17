@@ -1,4 +1,7 @@
 .quantifier {
+  display: flex;
+  align-items: center;
+
   input {
     order: 1;
     border: 1px solid #eeeeee;
@@ -7,10 +10,9 @@
     outline: none;
     padding: 10px;
     position: relative;
-    height: 38px;
-    left: -6px;
+    height: 30px;
     text-align: center;
-    width: 38px;
+    width: 30px;
     display: inline-block;
     font-size: 13px;
     resize: vertical;
@@ -29,11 +31,11 @@
   input[type='button'] {
     background-color: #eeeeee;
     border: none;
-    width: 38px;
+    width: 30px;
     transition: all 300ms ease;
     font-weight: bold;
     font-size: 1.2em;
-    height: 38px;
+    height: 30px;
     padding: 0;
     position: relative;
 

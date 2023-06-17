@@ -16,6 +16,7 @@
       h3 {
         color: #007185;
         font-weight: 700;
+        font-size: 1em;
         line-height: 20px;
         margin: .3rem;
         flex: 1;
@@ -25,14 +26,6 @@
         height: 3rem;
         margin: .875rem;
       }
-    }
-
-    @media (max-width: 767px) {
-
-    }
-
-    @media (max-width: 400px) {
-
     }
   }
 }
