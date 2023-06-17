@@ -16,7 +16,7 @@ export const Header: FunctionComponent = () => {
     <header className={classes.header}>
       <div>
         <Link to="/">
-          <img src={logo} className={classes.logo} alt="Shopping CartWidget Application" />
+          <img src={logo} className={classes.logo} alt="Shopping Cart Application" />
         </Link>
       </div>
       <div>
