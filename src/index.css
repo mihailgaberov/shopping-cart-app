@@ -26,3 +26,11 @@ body {
     background-color: #ffffff;
   }
 }
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: white;
+    background-color: black;
+  }
+}
