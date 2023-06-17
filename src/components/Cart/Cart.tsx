@@ -4,6 +4,7 @@ import useLocalStorageState from 'use-local-storage-state'
 import { Quantifier } from '../Quantifier'
 import { CartProps } from '../Products/Products.tsx'
 import classes from './cart.module.scss'
+import { TotalPrice } from '../TotalPrice'
 
 
 export const Cart: FunctionComponent = () => {
@@ -30,6 +31,7 @@ export const Cart: FunctionComponent = () => {
           </div>
         ))}
       </div>
+      <TotalPrice amount={233} />
     </section>
   )
 }
