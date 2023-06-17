@@ -18,7 +18,7 @@ export const CartWidget: FunctionComponent<Props> = ({ productsCount }) => {
   return (
     <button className={classes.container} onClick={navigateToCart}>
       <span className={classes.productsCount}>{productsCount}</span>
-      <img src={shoppingCart} className={classes.shoppingCart} alt="Go to CartWidget" />
+      <img src={shoppingCart} className={classes.shoppingCart} alt="Go to Cart" />
     </button>
   )
 }
