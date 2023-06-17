@@ -21,22 +21,22 @@ export const Cart: FunctionComponent = () => {
 
   const handleUpdateQuantity = (productId: number, operation: Operation) => {
     setCart((prevCart) => {
-      const updatedCart = { ...prevCart };
+      const updatedCart = { ...prevCart }
       if (updatedCart[productId]) {
         if (operation === 'increase') {
-          updatedCart[productId] = { ...updatedCart[productId], quantity: updatedCart[productId].quantity + 1 };
+          updatedCart[productId] = { ...updatedCart[productId], quantity: updatedCart[productId].quantity + 1 }
         } else {
-          updatedCart[productId] = { ...updatedCart[productId], quantity: updatedCart[productId].quantity - 1 };
+          updatedCart[productId] = { ...updatedCart[productId], quantity: updatedCart[productId].quantity - 1 }
         }
       }
-      return updatedCart;
-    });
-  };
+      return updatedCart
+    })
+  }
 
 
   const getProducts = () => Object.values(cart || {})
 
-  const totalPrice = getProducts().reduce((accumulator, product) => accumulator + (product.price * product.quantity), 0);
+  const totalPrice = getProducts().reduce((accumulator, product) => accumulator + (product.price * product.quantity), 0)
 
   return (
     <section className={classes.cart}>
