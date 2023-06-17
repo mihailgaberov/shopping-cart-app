@@ -3,6 +3,7 @@ import useLocalStorageState from 'use-local-storage-state'
 
 import { CurrencyFormatter } from '../CurrencyFormatter'
 import classes from './products.module.scss'
+import { Loader } from '../Loader'
 
 const API_URL = 'https://dummyjson.com/products'
 
@@ -20,6 +21,7 @@ export interface CartProps {
 }
 
 export const Products: FunctionComponent = () => {
+  const [isLoading, setIsLoading] = useState(true)
   const [products, setProducts] = useState<Product[]>([])
   const [error, setError] = useState(false)
   const [cart, setCart] = useLocalStorageState<CartProps>('cart', {})
@@ -36,11 +38,14 @@ export const Products: FunctionComponent = () => {
       if (response.ok) {
         const data = await response.json();
         setProducts(data.products)
+        setIsLoading(false)
       } else {
         setError(true)
+        setIsLoading(false)
       }
     } catch (error) {
       setError(true)
+      setIsLoading(false)
     }
   }
 
@@ -58,6 +63,11 @@ export const Products: FunctionComponent = () => {
   if (error) {
     return <h3 className={classes.error}>An error occurred when fetching data. Please check the API and try again.</h3>
   }
+
+  if (isLoading) {
+    return <Loader />
+  }
+
 
   return (
     <section className={classes.productPage}>
