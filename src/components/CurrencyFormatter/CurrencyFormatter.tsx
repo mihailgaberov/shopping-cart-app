@@ -11,7 +11,7 @@ export const CurrencyFormatter: FunctionComponent<Props> = ({ amount }) => {
   const formattedAmount = amount.toLocaleString('en-GB', {
     style: 'currency',
     currency: 'GBP'
-  });
+  })
 
-  return <span className={classes.currency}>{formattedAmount}</span>;
-};
+  return <span className={classes.currency}>{formattedAmount}</span>
+}

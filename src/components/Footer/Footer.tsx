@@ -3,7 +3,7 @@ import classes from "./footer.module.scss"
 import packageJson from '../../../package.json'
 
 export const Footer: FunctionComponent = () => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear()
 
   return (
     <footer className={classes.footer} data-cy="footer">
@@ -17,7 +17,7 @@ export const Footer: FunctionComponent = () => {
           >
             twitter
           </a>{" "}
-          &bull;{" "}
+          &bull{" "}
           <a
             href="https://github.com/mihailgaberov"
             target="_blank"

@@ -14,8 +14,8 @@ describe('Footer', () => {
   })
 
   it('has social links working correctly', async () => {
-    expect(screen.getByText('twitter').closest('a')).toHaveAttribute('href', 'https://twitter.com/mihailgaberov');
-    expect(screen.getByText('github').closest('a')).toHaveAttribute('href', 'https://github.com/mihailgaberov');
+    expect(screen.getByText('twitter').closest('a')).toHaveAttribute('href', 'https://twitter.com/mihailgaberov')
+    expect(screen.getByText('github').closest('a')).toHaveAttribute('href', 'https://github.com/mihailgaberov')
   })
 
 

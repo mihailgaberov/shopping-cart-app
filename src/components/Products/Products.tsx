@@ -36,7 +36,7 @@ export const Products: FunctionComponent = () => {
     try {
       const response = await fetch(url)
       if (response.ok) {
-        const data = await response.json();
+        const data = await response.json()
         setProducts(data.products)
         setIsLoading(false)
       } else {
