@@ -5,12 +5,13 @@ import { Quantifier } from '../Quantifier'
 import { CartProps } from '../Products/Products.tsx'
 import classes from './cart.module.scss'
 import { TotalPrice } from '../TotalPrice'
+import { Operation } from '../Quantifier/Quantifier.tsx'
 
 
 export const Cart: FunctionComponent = () => {
   const [cart, setCart] = useLocalStorageState<CartProps>('cart', {})
 
-  const handleRemoveProduct = (productId: number):void => {
+  const handleRemoveProduct = (productId: number): void => {
     setCart((prevCart) => {
       const updatedCart = { ...prevCart }
       delete updatedCart[productId]
@@ -18,20 +19,42 @@ export const Cart: FunctionComponent = () => {
     })
   }
 
+  const handleUpdateQuantity = (productId: number, operation: Operation) => {
+    setCart((prevCart) => {
+      const updatedCart = { ...prevCart };
+      if (updatedCart[productId]) {
+        if (operation === 'increase') {
+          updatedCart[productId] = { ...updatedCart[productId], quantity: updatedCart[productId].quantity + 1 };
+        } else {
+          updatedCart[productId] = { ...updatedCart[productId], quantity: updatedCart[productId].quantity - 1 };
+        }
+      }
+      return updatedCart;
+    });
+  };
+
+
+  const getProducts = () => Object.values(cart || {})
+
+  const totalPrice = getProducts().reduce((accumulator, product) => accumulator + (product.price * product.quantity), 0);
+
   return (
     <section className={classes.cart}>
       <h1>Cart</h1>
 
       <div className={classes.container}>
-        {Object.values(cart || {}).map(product => (
+        {getProducts().map(product => (
           <div className={classes.product} key={product.id}>
             <img src={product.thumbnail} alt={product.title} />
             <h3>{product.title}</h3>
-            <Quantifier removeProductCallback={() => handleRemoveProduct(product.id)} productId={product.id} />
+            <Quantifier
+              removeProductCallback={() => handleRemoveProduct(product.id)}
+              productId={product.id}
+              handleUpdateQuantity={handleUpdateQuantity} />
           </div>
         ))}
       </div>
-      <TotalPrice amount={233} />
+      <TotalPrice amount={totalPrice} />
     </section>
   )
 }
