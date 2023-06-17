@@ -12,6 +12,7 @@ export type Product = {
   price: number
   thumbnail: string
   image: string
+  quantity: number
 }
 
 export interface CartProps {
@@ -44,6 +45,8 @@ export const Products: FunctionComponent = () => {
   }
 
   const addToCart = (product: Product):void => {
+    product.quantity = 1
+
     setCart((prevCart) => ({
       ...prevCart,
       [product.id]: product,
