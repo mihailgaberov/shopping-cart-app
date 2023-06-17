@@ -35,4 +35,9 @@ describe('Cart', () => {
     expect(screen.getByText('Samsung Universe 9')).toBeInTheDocument()
     expect(screen.getByText('£3,047.00')).toBeInTheDocument()
   })
+
+  it('calculates the total price correctly', () => {
+    expect(screen.getByText('Total:'))
+    expect(screen.getByText('£2,148.00'))
+  })
 })
