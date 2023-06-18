@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useEffect } from 'react'
 import useLocalStorageState from 'use-local-storage-state'
 
 import { Quantifier } from '../Quantifier'
@@ -6,10 +6,16 @@ import { CartProps } from '../Products/Products.tsx'
 import { TotalPrice } from '../TotalPrice'
 import { Operation } from '../Quantifier/Quantifier.tsx'
 import classes from './cart.module.scss'
+import { useLocation } from 'react-router-dom'
 
 
 export const Cart: FunctionComponent = () => {
   const [cart, setCart] = useLocalStorageState<CartProps>('cart', {})
+  const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location])
 
   const handleRemoveProduct = (productId: number): void => {
     setCart((prevCart) => {
