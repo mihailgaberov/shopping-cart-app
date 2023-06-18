@@ -72,6 +72,9 @@ To run the app:
   yarn dev
 ```
 
+#### Passing Tests
+![Mobile](https://github.com/mihailgaberov/shopping-cart-app/blob/main/screenshots/mobile.gif)
+
 To run the tests:
 
 ```shell
