@@ -17,7 +17,7 @@ export const Footer: FunctionComponent = () => {
           >
             twitter
           </a>{" "}
-          &bull{" "}
+          &bull;{" "}
           <a
             href="https://github.com/mihailgaberov"
             target="_blank"
