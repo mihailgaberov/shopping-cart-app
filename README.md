@@ -14,11 +14,13 @@ A real-life shopping cart application built with React/Typescript/Vitest.
 - SASS / CSS Modules
 - react-testing-library / Vitest
 
-### Screenshots
-
+### Screenshots (animated)
+![Desktop](https://github.com/mihailgaberov/hopping-cart-app/blob/main/screenshots/desktop.gif)
+![Mobile](https://github.com/mihailgaberov/hopping-cart-app/blob/main/screenshots/mobile.gif)
 
 ## Application features:
-    The Shopping Cart consists of two pages: the product list page and the cart page
+The Shopping Cart consists of two pages: the product list page and the cart page
+
 ### I. Header
 1. The header component contains the application's logo on the left side, which is clickable and points to the product list page
 2. The header component contains the application's cart widget, which represents a cart icon with a number, signifying the count of the products added in the cart
