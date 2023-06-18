@@ -28,7 +28,7 @@ The Shopping Cart consists of two pages: the product list page and the cart page
 ### I. Header
 1. The header component contains the application's logo on the left side, which is clickable and points to the product list page
 2. The header component contains the application's cart widget, which represents a cart icon with a number, signifying the count of the products added in the cart
-3. The header component is auto-shrinkable, which means whenever the user scrolls downs the header and its elements size is reduced
+3. The header component is auto-shrinkable, which means whenever the user scrolls down, the header and its elements size is reduced
 4. The header component supports certain degree of opacity, which adds up to the look and feel of the app and also allows better visibility for the users
 
 ### II. Product List page
