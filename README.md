@@ -73,7 +73,7 @@ To run the app:
 ```
 
 #### Passing Tests
-![Mobile](https://github.com/mihailgaberov/shopping-cart-app/blob/main/screenshots/mobile.gif)
+![Tests](https://github.com/mihailgaberov/shopping-cart-app/blob/main/screenshots/passing-tests.png)
 
 To run the tests:
 
