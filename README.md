@@ -15,7 +15,10 @@ A real-life shopping cart application built with React/Typescript/Vitest.
 - react-testing-library / Vitest
 
 ### Screenshots (animated)
+Desktop view
 ![Desktop](https://github.com/mihailgaberov/shopping-cart-app/blob/main/screenshots/desktop.gif)
+
+Mobile view
 ![Mobile](https://github.com/mihailgaberov/shopping-cart-app/blob/main/screenshots/mobile.gif)
 
 ## Application features:
