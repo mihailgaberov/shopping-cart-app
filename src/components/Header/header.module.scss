@@ -1,15 +1,17 @@
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
   background-color: #213547;
   transition: height 0.3s ease;
-
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  opacity: 0.9;
+  backdrop-filter: saturate(180%) blur(20px);
+  justify-content: space-between;
+  z-index: 1;
 
   .logo {
     height: 6em;
