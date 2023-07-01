@@ -2,7 +2,7 @@
 
 A real-life shopping cart application built with React/Typescript/Vitest.
 
->I have written a tutorial about how I did this. You can find it [here](https://www.mihailgaberov.com/how-to-build-a-shopping-cart-with-react-and-typescript) or [here](https://www.freecodecamp.org/news/how-to-build-a-shopping-cart-with-react-and-typescript/)
+>_I have written a tutorial about how I did this. You can find it [here](https://www.mihailgaberov.com/how-to-build-a-shopping-cart-with-react-and-typescript) or [here](https://www.freecodecamp.org/news/how-to-build-a-shopping-cart-with-react-and-typescript/)._
 
 
 <hr />
